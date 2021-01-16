@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Pong, { DIRECTION } from './pong_canvas'
-
+import Pong, { DIRECTION } from "./pong_canvas";
 
 const PongExecutor = () => {
-    useEffect(() => {
-        Pong.initialize();
-      }, []);
+  useEffect(() => {
+    Pong.initialize();
+  }, []);
 
-    return (
-        <canvas></canvas>
-    );
+  return <canvas id="pongCanvas"></canvas>;
 };
 
 export default PongExecutor;
