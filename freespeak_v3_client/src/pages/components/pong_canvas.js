@@ -1,7 +1,7 @@
 import PongExecutor from "./PongExecutor";
 
 // Global Variables
-var DIRECTION = {
+export var DIRECTION = {
   IDLE: 0,
   UP: 1,
   DOWN: 2,
@@ -9,7 +9,7 @@ var DIRECTION = {
   RIGHT: 4,
 };
 
-var rounds = [5, 5, 3, 3, 2];
+var rounds = [1, 5, 3, 3, 2];
 var colors = ["#1abc9c", "#2ecc71", "#3498db", "#e74c3c", "#9b59b6"];
 
 // The ball object (The cube that bounces back and forth)
@@ -44,7 +44,7 @@ var Paddle = {
 
 var Game = {
   initialize: function () {
-    this.canvas = document.getElementById("pongCanvas");
+    Pong.canvas = document.getElementById("pongCanvas");
     this.context = this.canvas.getContext("2d");
 
     this.canvas.width = 1400;
@@ -340,30 +340,31 @@ var Game = {
     Pong.draw();
 
     // If the game is not over, draw the next frame.
-    if (!Pong.over) requestAnimationFrame(Pong.loop);
+    if (!Pong.over)
+      requestAnimationFrame(Pong.loop);
   },
 
   listen: function () {
-    document.addEventListener("keydown", function (key) {
-      if (key.keyCode === 32) {
-        // Handle the 'Press any key to begin' function and start the game.
+    document.addEventListener("keydown", function (event) {
+      // Handle the 'Press any key to begin' function and start the game.
+      if (event.code === "Space") {
         if (Pong.running === false) {
           Pong.running = true;
           window.requestAnimationFrame(Pong.loop);
         }
       }
       // Handle up arrow and w key events
-      if (key.keyCode === 38 || key.keyCode === 87)
-        Pong.player.move = DIRECTION.UP;
+    //   if (key.keyCode === 38 || key.keyCode === 87)
+    //     Pong.player.move = DIRECTION.UP;
 
-      // Handle down arrow and s key events
-      if (key.keyCode === 40 || key.keyCode === 83)
-        Pong.player.move = DIRECTION.DOWN;
-    });
+    //   // Handle down arrow and s key events
+    //   if (key.keyCode === 40 || key.keyCode === 83)
+    //     Pong.player.move = DIRECTION.DOWN;
+    // });
 
-    // Stop the player from moving when there are no keys being pressed.
-    document.addEventListener("keyup", function (key) {
-      Pong.player.move = DIRECTION.IDLE;
+    // // Stop the player from moving when there are no keys being pressed.
+    // document.addEventListener("keyup", function (key) {
+    //   Pong.player.move = DIRECTION.IDLE;
     });
   },
 
@@ -389,5 +390,5 @@ var Game = {
   },
 };
 
-let Pong = Object.assign({}, Game);
+let Pong = Game; //Object.assign({}, Game);
 export default Pong;
