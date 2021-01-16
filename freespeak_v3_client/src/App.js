@@ -11,14 +11,21 @@ function App() {
           <Switch>
             <Route path='/' exact render={(props) => <StartPage {...props} />}/>
             <Route path='/game'>
-                <PongExecutor />
-                <VideoStream />
+            <div className="container">
+                <div className="pong-executor">
+                    <PongExecutor className="pong-executor" />
+                </div>
+
+                <div className="video-stream">
+                    <VideoStream width={200} height={100} />
+                </div>
+            </div>
             </Route>
           </Switch>  
         </div>
     </HashRouter> 
     ) ;
-  
+  S
 }
 
 export default App;
