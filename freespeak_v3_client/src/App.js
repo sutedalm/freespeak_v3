@@ -5,6 +5,7 @@ import PongExecutor from "./pages/components/PongExecutor";
 import StartPage from './pages/StartPage.js';
 
 function App() {
+  
     return (
         <HashRouter>
         <div style={{height:'100%'}}>
@@ -25,7 +26,10 @@ function App() {
         </div>
     </HashRouter> 
     ) ;
-  S
-}
 
+  const setEmotion = (emotion) => {
+    result = Object.keys(emotion).reduce((a, b) => obj[a] > obj[b] ? a : b);
+    console.log(result)
+  }
+}
 export default App;
