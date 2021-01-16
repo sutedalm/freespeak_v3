@@ -25,7 +25,7 @@ function App() {
         </div>
     </HashRouter> 
     ) ;
-  S
+  
 }
 
 export default App;

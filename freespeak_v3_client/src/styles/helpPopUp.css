@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'pixelFont';
+	src: 
+		local('Pixel Font'),
+		local('Pixel-Font'),
+		url('../fonts/04B_30__.TTF') 
+		format('truetype')
+}
+
+#popup {
+        position: fixed;  
+        width: 100%;  
+        height: 100%;  
+        top: 0;  
+        left: 0;  
+        right: 0;  
+        bottom: 0;  
+        margin: auto;  
+        background-color: rgba(0,0,0, 0.5);  
+}
+
+#helpTitle {
+    text-align: center;
+}
+
+
+#popupInner {
+  position: absolute;  
+  left: 25%;  
+  right: 25%;  
+  top: 25%;  
+  bottom: 25%;  
+  margin: auto;  
+  padding: 20px;
+  border-radius: 20px;  
+  background: black;
+  font-family: 'pixelFont',sans-serif;
+  border-style: solid;
+  border-radius: 2%; 
+  border-width: 5px;
+}
+
+#text {
+    margin-bottom: 50px;
+}

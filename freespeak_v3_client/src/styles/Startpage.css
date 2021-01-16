@@ -1,26 +1,55 @@
 @font-face {
     font-family: 'pixelFont';
-	src: url('../fonts/04B_30__.eot'); 
 	src: 
 		local('Pixel Font'),
 		local('Pixel-Font'),
-		url('../fonts/04B_30__.ttf') 
-		format('truetype');
+		url('../fonts/04B_30__.TTF') 
+		format('truetype')
+}
+
+body {
+   
+    height: 100%;
+    background-color: black;
 }
 
 #game-logo {
-    font-family:  'pixelFont', sans-serif;
     font-size: xx-large;
-    color: black;
 }
 
-#container {
+#container {  
+    background-color: black;
+    height: 100%;
+    color: white;
+    font-family:  'pixelFont', sans-serif;
+}
+
+#main {
     text-align: center;
 }
 
-#playBtn {
+#about {
+    margin-top: 10%;
+}
+
+#buttons {
+    margin-top: 400px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn h2:hover {
+    color: purple;
+}
+
+.btn {
     cursor: pointer;
     text-decoration: none;
-    margin-top: 50 px;
+    color: white;
+    font-size: xx-large;
+    margin: 20px;
 }
 
