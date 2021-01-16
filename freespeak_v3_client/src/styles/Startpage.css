@@ -1,5 +1,15 @@
+@font-face {
+    font-family: 'pixelFont';
+	src: url('../fonts/04B_30__.eot'); 
+	src: 
+		local('Pixel Font'),
+		local('Pixel-Font'),
+		url('../fonts/04B_30__.ttf') 
+		format('truetype');
+}
+
 #game-logo {
-    font-family:  Helvetica, sans-serif;
+    font-family:  'pixelFont', sans-serif;
     font-size: xx-large;
     color: black;
 }
