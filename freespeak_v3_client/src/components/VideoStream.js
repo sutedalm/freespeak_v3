@@ -3,10 +3,7 @@ import React, { useEffect, useState } from "react";
 
 import * as faceapi from "face-api.js";
 
-const VideoStream = () => {
-  const width = 1280;
-  const height = 720;
-
+const VideoStream = ({ width, height }) => {
   function analyze() {
     const video = document.getElementById("video");
     const canvas = document.getElementById("canvas");
@@ -29,7 +26,7 @@ const VideoStream = () => {
     const video = document.getElementById("video");
     const canvas = document.getElementById("canvas");
     // input constraints
-    var constraints = { audio: true, video: { width: 1280, height: 720 } };
+    var constraints = { audio: true, video: { width: width, height: height } };
     navigator.mediaDevices
       .getUserMedia(constraints)
       .then((mediaStream) => {
