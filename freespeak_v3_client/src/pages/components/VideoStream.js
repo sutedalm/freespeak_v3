@@ -1,4 +1,4 @@
-import "../styles/VideoStream.css";
+import "../../styles/VideoStream.css";
 import React, { useEffect, useState } from "react";
 
 import * as faceapi from "face-api.js";

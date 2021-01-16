@@ -7,3 +7,10 @@
 #container {
     text-align: center;
 }
+
+#playBtn {
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 50 px;
+}
+
