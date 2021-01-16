@@ -26,7 +26,7 @@ const PongExecutor = ({emotion}) => {
     if (Pong.running) {
       if (em === 'happy')
         Pong.player.move = DIRECTION.UP;
-        
+
       else if (em === 'surprised')
         Pong.player.move = DIRECTION.DOWN;
 

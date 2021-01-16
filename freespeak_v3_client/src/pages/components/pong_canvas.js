@@ -9,7 +9,7 @@ export var DIRECTION = {
   RIGHT: 4,
 };
 
-var rounds = [1, 5, 3, 3, 2];
+var rounds = [3, 5, 3, 3, 2];
 var colors = ["#1abc9c", "#2ecc71", "#3498db", "#e74c3c", "#9b59b6"];
 
 // The ball object (The cube that bounces back and forth)
@@ -44,7 +44,7 @@ var Paddle = {
 
 var Game = {
   initialize: function () {
-    Pong.canvas = document.getElementById("pongCanvas");
+    this.canvas = document.getElementById("pongCanvas");
     this.context = this.canvas.getContext("2d");
 
     this.canvas.width = 1400;
@@ -91,7 +91,7 @@ var Game = {
     );
 
     setTimeout(function () {
-      Pong = Object.assign({}, Game);
+      Pong = Game; //Object.assign({}, Game);
       Pong.initialize();
     }, 3000);
   },
