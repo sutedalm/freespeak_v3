@@ -1,7 +1,7 @@
 
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import VideoStream from "./pages/components/VideoStream";
-import PongExecutor from "./pages/components/PongExecutor";
+import PongExecutor from "./pages/components/PongExecutor2";
 import StartPage from './pages/StartPage.js';
 import {useState} from "react"
 
