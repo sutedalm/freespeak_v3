@@ -46,6 +46,9 @@ var Game = {
   initialize: function () {
     this.canvas = document.getElementById("pongCanvas");
     this.context = this.canvas.getContext("2d");
+    this.pScore = document.getElementById("playerScore");
+    this.oScore = document.getElementById("oppScore");
+    this.currentEmotion = document.getElementById("currentEmotion");
 
     this.canvas.width = 1400;
     this.canvas.height = 1000;
@@ -69,7 +72,7 @@ var Game = {
 
   endGameMenu: function (text) {
     // Change the canvas font size and color
-    Pong.context.font = "50px Courier New";
+    Pong.context.font = "50px 'pixelFont'";
     Pong.context.fillStyle = this.color;
 
     //Draw the rectangle behind the 'Press any key to begin' text.
@@ -101,7 +104,7 @@ var Game = {
     Pong.draw();
 
     // Change the canvas font size and color
-    this.context.font = "50px Courier New";
+    this.context.font = "50px 'pixelFont'";
     this.context.fillStyle = this.color;
 
     // Draw the rectangle behind the 'Press any key to begin' text.
@@ -139,10 +142,14 @@ var Game = {
         this.ball.moveY = DIRECTION.UP;
 
       // Move player if they player.move value was updated by a keyboard event
-      if (this.player.move === DIRECTION.UP) this.player.y -= this.player.speed;
-      else if (this.player.move === DIRECTION.DOWN)
+      if (this.player.move === DIRECTION.UP) {
+          this.player.y -= this.player.speed;
+          this.currentEmotion.innerHTML = 'Happy';
+      } 
+      else if (this.player.move === DIRECTION.DOWN) {
         this.player.y += this.player.speed;
-
+        this.currentEmotion.innerHTML = 'Surprised';
+      }
       // On new serve (start of each turn) move the ball to the correct side
       // and randomize the direction to add some challenge.
       if (Pong._turnDelayIsOver.call(this) && this.turn) {
@@ -226,12 +233,13 @@ var Game = {
       if (!rounds[this.round + 1]) {
         this.over = true;
         setTimeout(function () {
-          Pong.endGameMenu("Winner!");
+          Pong.endGameMenu("You won!");
         }, 1000);
       } else {
         // If there is another round, reset all the values and increment the round number.
         this.color = this._generateRoundColor();
         this.player.score = this.paddle.score = 0;
+        this.pScore.innerHTML = this.oScore.innerHTML = this.paddle.score;
         this.player.speed += 0.5;
         this.paddle.speed += 1;
         this.ball.speed += 1;
@@ -242,7 +250,7 @@ var Game = {
     else if (this.paddle.score === rounds[this.round]) {
       Pong.over = true;
       setTimeout(function () {
-        Pong.endGameMenu("Game Over!");
+        Pong.endGameMenu("You lost!");
       }, 1000);
     }
   },
@@ -297,25 +305,17 @@ var Game = {
     this.context.stroke();
 
     // Set the default canvas font and align it to the center
-    this.context.font = "100px Courier New";
+    this.context.font = "100px 'pixelFont'";
     this.context.textAlign = "center";
 
     // Draw the players score (left)
-    this.context.fillText(
-      this.player.score.toString(),
-      this.canvas.width / 2 - 300,
-      200
-    );
+    this.pScore.innerHTML = this.player.score;
 
     // Draw the paddles score (right)
-    this.context.fillText(
-      this.paddle.score.toString(),
-      this.canvas.width / 2 + 300,
-      200
-    );
+    this.oScore.innerHTML = this.paddle.score;
 
     // Change the font size for the center score text
-    this.context.font = "30px Courier New";
+    this.context.font = "30px 'pixelFont'";
 
     // Draw the winning score (center)
     this.context.fillText(
@@ -325,7 +325,7 @@ var Game = {
     );
 
     // Change the font size for the center score value
-    this.context.font = "40px Courier";
+    this.context.font = "40px 'pixelFont'";
 
     // Draw the current round number
     this.context.fillText(
@@ -338,6 +338,8 @@ var Game = {
   loop: function () {
     Pong.update();
     Pong.draw();
+
+    
 
     // If the game is not over, draw the next frame.
     if (!Pong.over)

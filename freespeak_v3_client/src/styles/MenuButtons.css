@@ -7,31 +7,6 @@
 		format('truetype')
 }
 
-body {
-   
-    height: 100%;
-    background-color: black;
-}
-
-#game-logo {
-    font-size: xx-large;
-}
-
-#container {  
-    background-color: black;
-    height: 100%;
-    color: white;
-    font-family:  'pixelFont', sans-serif;
-}
-
-#main {
-    text-align: center;
-}
-
-#about {
-    margin-top: 10%;
-}
-
 #buttons {
     margin-top: 400px;
 }
@@ -52,4 +27,3 @@ a {
     font-size: xx-large;
     margin: 20px;
 }
-

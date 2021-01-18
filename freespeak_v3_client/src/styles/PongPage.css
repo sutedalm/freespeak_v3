@@ -1,0 +1,80 @@
+@font-face {
+    font-family: 'pixelFont';
+	src: 
+		local('Pixel Font'),
+		local('Pixel-Font'),
+		url('../fonts/04B_30__.TTF') 
+		format('truetype')
+}
+
+body {
+   
+    height: 100%;
+    background-color: black;
+}
+
+#game-logo {
+    font-size: xx-large;
+}
+
+#container {  
+    background-color: black;
+    height: 100%;
+    color: white;
+    font-family:  'pixelFont', sans-serif;
+}
+
+#game {
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+
+#leftSide {
+    margin-right: 10%;
+    width: 70%;
+}
+
+
+
+#game-info {
+    border-style: solid;
+    border-radius: 2%; 
+    border-width: 5px;
+    padding: 12px 10px 12px 10px ;
+    width: 100%;
+}
+
+
+#pongCanvas {
+    font-family:  'pixelFont', sans-serif;
+    border-style: solid;
+    border-radius: 2%; 
+    border-width: 5px,
+}
+
+.video-output {
+    position: fixed;
+    right: 250px;
+    border-style: solid;
+    border-radius: 2%; 
+    border-width: 5px,
+  }
+
+.video-canvas {
+    position: fixed;
+    z-index: 1;
+    right: 250px;
+  }
+
+#main {
+    text-align: center;
+}
+
+#about {
+    margin-top: 10%;
+}
+
+
+
+
+

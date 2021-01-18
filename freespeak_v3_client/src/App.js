@@ -1,8 +1,6 @@
 
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import VideoStream from "./pages/components/VideoStream";
-import PongExecutor from "./pages/components/PongExecutor";
-import StartPage from './pages/StartPage.js';
+import PongPage from './pages/PongPage.js';
 import {useState} from "react"
 
 function App() {
@@ -18,17 +16,8 @@ function App() {
         <HashRouter>
         <div style={{height:'100%'}}>
           <Switch>
-            <Route path='/' exact render={(props) => <StartPage {...props} />}/>
+            <Route path='/'><PongPage emotion={result} setEmotion={setEmotion}  /></Route>
             <Route path='/game'>
-            <div className="container">
-                <div className="pong-executor">
-                    <PongExecutor className="pong-executor" emotion={result}/>
-                </div>
-
-                <div className="video-stream">
-                    <VideoStream width={200} height={100} setEmotion={setEmotion} />
-                </div>
-            </div>
             </Route>
           </Switch>
         </div>
