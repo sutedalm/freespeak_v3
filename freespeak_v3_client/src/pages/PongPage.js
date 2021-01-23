@@ -57,7 +57,7 @@ export default class StartPage extends React.Component {
                     Created by Almo, Maria and Jack
                 </div>
                 {this.state.showPopup ?  <Popup  
-                closePopup={MenuButtons.togglePopup.bind(this)} /> : null } 
+                closePopup={this.togglePopup.bind(this)} /> : null } 
             </div>
         );
     }
