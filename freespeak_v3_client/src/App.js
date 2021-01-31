@@ -1,5 +1,6 @@
 
 import { HashRouter, Route, Switch } from 'react-router-dom';
+import GamesLibrary from './pages/GamesLibrary.js';
 import PongPage from './pages/PongPage.js';
 import {useState} from "react"
 
@@ -16,9 +17,8 @@ function App() {
         <HashRouter>
         <div style={{height:'100%'}}>
           <Switch>
-            <Route path='/'><PongPage emotion={result} setEmotion={setEmotion}  /></Route>
-            <Route path='/game'>
-            </Route>
+            <Route path='/' exact render={(props) => <GamesLibrary {...props} />}/>
+            <Route path='/emopong' exact render={(props) => <PongPage emotion={result} setEmotion={setEmotion} {...props} />}/>
           </Switch>
         </div>
     </HashRouter>

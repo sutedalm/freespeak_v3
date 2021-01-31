@@ -1,0 +1,35 @@
+#library {
+    font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: white;
+    color: midnightblue;
+    text-align: left;
+    height: 100%;
+}
+
+#header {
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+
+.game {
+    color: midnightblue;
+    text-decoration: none;
+    padding: 5px;
+    font-size: x-large;
+    border-bottom: 2px solid black;
+}
+
+#pongSelection {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+#arrowRight {
+    text-align: right;
+}
+
+a {
+    text-decoration: none;  
+    width: 100%;
+}

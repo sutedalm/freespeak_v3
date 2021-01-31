@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect,Link } from "react-router-dom";
+
 
 import '../styles/PongPage.css'
 import Popup from './components/helpPopUp.js';
@@ -9,7 +9,7 @@ import VideoStream from "./components/VideoStream";
 import PongExecutor from "./components/PongExecutor";
 
 
-export default class StartPage extends React.Component {
+export default class PongPage extends React.Component {
 	constructor(props){
 		super();
 		this.state = {
