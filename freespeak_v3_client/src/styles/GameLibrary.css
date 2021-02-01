@@ -1,9 +1,22 @@
+body {
+    height: 100%;
+    background-color: white;
+}
+
 #library {
     font-family:  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: white;
     color: midnightblue;
-    text-align: left;
+    text-align: center;
     height: 100%;
+}
+
+.gameCategory{
+    font-size: x-large;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    margin-left: 1px;
+    margin-right: 1px;
 }
 
 #header {
@@ -11,25 +24,39 @@
     border-bottom: 2px solid black;
 }
 
+#list {
+    display: table;
+    margin: 0;
+    width: 100%;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+    height: 100%;
+}
+
 .game {
-    color: midnightblue;
+    color: white;
     text-decoration: none;
     padding: 5px;
     font-size: x-large;
     border-bottom: 2px solid black;
+    height: 300px;
+    width: 95%;
+    margin: 10px;
 }
 
-#pongSelection {
-    width: 100%;
-    display: inline-flex;
-    justify-content: space-between;
+
+.symbol {
+    font-size: 200px;
 }
 
-#arrowRight {
-    text-align: right;
-}
 
 a {
+    color: white;
     text-decoration: none;  
     width: 100%;
+    display:inline-block;
 }
